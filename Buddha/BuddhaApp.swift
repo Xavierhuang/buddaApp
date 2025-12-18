@@ -12,7 +12,13 @@ import SwiftData
 struct BuddhaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            BuddhistText.self,
+            Chapter.self,
+            Verse.self,
+            Note.self,
+            Highlight.self,
+            Bookmark.self,
+            ReadingHistory.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +31,7 @@ struct BuddhaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
         .modelContainer(sharedModelContainer)
     }
